@@ -24,9 +24,9 @@ export function Footer() {
               <Image
                 src={logoSrc}
                 alt={`${SITE.name} logo`}
-                width={40}
-                height={40}
-                className="h-10 w-auto object-contain"
+                width={120}
+                height={50}
+                className="h-8 w-auto object-contain"
               />
               <span className="font-display text-xl font-semibold">{SITE.name}</span>
             </Link>
@@ -54,7 +54,7 @@ export function Footer() {
           <SocialLinks variant="light" />
         </div>
         <div className="mt-10 border-t border-navy-foreground/10 pt-6 text-center text-xs text-navy-foreground/60">
-          © 2025 {SITE.name}. All rights reserved.
+          © {new Date().getFullYear()} {SITE.name}. All rights reserved.
         </div>
       </div>
     </footer>
