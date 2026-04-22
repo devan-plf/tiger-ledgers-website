@@ -18,7 +18,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { contactSchema, type ContactFormData } from "@/lib/validations/contactSchema";
+import {
+  contactSchema,
+  type ContactFormData,
+} from "@/lib/validations/contactSchema";
 import { CONTACT, SERVICE_OPTIONS } from "@/constants/siteData";
 
 export function ContactSection() {
@@ -30,7 +33,9 @@ export function ContactSection() {
     reset,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema as never) as unknown as Resolver<ContactFormData>,
+    resolver: zodResolver(
+      contactSchema as never,
+    ) as unknown as Resolver<ContactFormData>,
     defaultValues: { name: "", email: "", phone: "", service: "", message: "" },
   });
 
@@ -57,7 +62,9 @@ export function ContactSection() {
       <div className="grid items-stretch gap-10 lg:grid-cols-5">
         <div className="lg:col-span-2">
           <div className="flex h-full flex-col rounded-2xl bg-navy p-8 text-navy-foreground shadow-[var(--shadow-elegant)]">
-            <h3 className="font-display text-2xl font-semibold">Reach us directly</h3>
+            <h3 className="font-display text-2xl font-semibold">
+              Reach us directly
+            </h3>
             <p className="mt-2 text-sm text-navy-foreground/70">
               We respond personally, not through a queue.
             </p>
@@ -80,7 +87,9 @@ export function ContactSection() {
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-navy-foreground/60">Email</p>
+                  <p className="text-xs uppercase tracking-wider text-navy-foreground/60">
+                    Email
+                  </p>
                   <a
                     href={`mailto:${CONTACT.email}`}
                     className="mt-1 block text-sm transition-colors hover:text-gold"
@@ -95,12 +104,16 @@ export function ContactSection() {
                   <Phone className="h-5 w-5" />
                 </div>
                 <div className="space-y-1.5">
-                  <p className="text-xs uppercase tracking-wider text-navy-foreground/60">Phone</p>
-                  <p className="text-sm">
-                    <span className="font-semibold text-gold">US:</span> {CONTACT.phoneUS}
+                  <p className="text-xs uppercase tracking-wider text-navy-foreground/60">
+                    Phone
                   </p>
                   <p className="text-sm">
-                    <span className="font-semibold text-gold">IN:</span> {CONTACT.phoneIN}
+                    <span className="font-semibold text-gold">US:</span>{" "}
+                    {CONTACT.phoneUS}
+                  </p>
+                  <p className="text-sm">
+                    <span className="font-semibold text-gold">IN:</span>{" "}
+                    {CONTACT.phoneIN}
                   </p>
                 </div>
               </div>
@@ -123,28 +136,55 @@ export function ContactSection() {
           <div className="grid gap-5 sm:grid-cols-2">
             <div className="space-y-1.5">
               <Label htmlFor="name">Name</Label>
-              <Input id="name" placeholder="Your full name" {...register("name")} />
-              {errors.name && <p className="text-xs text-destructive">{errors.name.message}</p>}
+              <Input
+                id="name"
+                placeholder="Your full name"
+                {...register("name")}
+              />
+              {errors.name && (
+                <p className="text-xs text-destructive">
+                  {errors.name.message}
+                </p>
+              )}
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" placeholder="you@company.com" {...register("email")} />
-              {errors.email && <p className="text-xs text-destructive">{errors.email.message}</p>}
+              <Input
+                id="email"
+                type="email"
+                placeholder="you@company.com"
+                {...register("email")}
+              />
+              {errors.email && (
+                <p className="text-xs text-destructive">
+                  {errors.email.message}
+                </p>
+              )}
             </div>
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2">
             <div className="space-y-1.5">
               <Label htmlFor="phone">Phone (optional)</Label>
-              <Input id="phone" placeholder="+1 555 000 0000" {...register("phone")} />
-              {errors.phone && <p className="text-xs text-destructive">{errors.phone.message}</p>}
+              <Input
+                id="phone"
+                placeholder="+1 555 000 0000"
+                {...register("phone")}
+              />
+              {errors.phone && (
+                <p className="text-xs text-destructive">
+                  {errors.phone.message}
+                </p>
+              )}
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="service">Service of Interest</Label>
               {mounted ? (
                 <Select
-                  value={service || undefined}
-                  onValueChange={(v) => setValue("service", v, { shouldValidate: true })}
+                  value={service}
+                  onValueChange={(v) =>
+                    setValue("service", v, { shouldValidate: true })
+                  }
                 >
                   <SelectTrigger id="service">
                     <SelectValue placeholder="Select a service" />
@@ -163,7 +203,9 @@ export function ContactSection() {
                 </div>
               )}
               {errors.service && (
-                <p className="text-xs text-destructive">{errors.service.message}</p>
+                <p className="text-xs text-destructive">
+                  {errors.service.message}
+                </p>
               )}
             </div>
           </div>
@@ -176,7 +218,11 @@ export function ContactSection() {
               placeholder="A few words about what you need..."
               {...register("message")}
             />
-            {errors.message && <p className="text-xs text-destructive">{errors.message.message}</p>}
+            {errors.message && (
+              <p className="text-xs text-destructive">
+                {errors.message.message}
+              </p>
+            )}
           </div>
 
           <Button

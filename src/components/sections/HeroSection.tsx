@@ -9,7 +9,10 @@ export function HeroSection() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const t = setInterval(() => setIndex((i) => (i + 1) % HERO_SLIDES.length), 5000);
+    const t = setInterval(
+      () => setIndex((i) => (i + 1) % HERO_SLIDES.length),
+      5000,
+    );
     return () => clearInterval(t);
   }, []);
 
@@ -30,7 +33,13 @@ export function HeroSection() {
           transition={{ duration: 1.2, ease: "easeInOut" }}
           className="absolute inset-0 -z-10"
         >
-          <img src={slide.image} alt="" className="h-full w-full object-cover" loading="eager" />
+          <img
+            src={slide.image}
+            alt=""
+            className="h-full w-full object-cover"
+            style={{ objectPosition: slide.objectPosition || "center" }}
+            loading="eager"
+          />
           <div className="absolute inset-0 bg-gradient-to-br from-navy/85 via-navy/70 to-navy/55" />
         </motion.div>
       </AnimatePresence>

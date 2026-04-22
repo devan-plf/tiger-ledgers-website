@@ -21,11 +21,21 @@ export function AboutUsSection() {
             <CardContent className="p-7">
               <div className="flex items-start justify-between gap-4">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-navy font-display text-xl font-semibold text-gold">
-                    {member.name.charAt(0)}
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full bg-navy font-display text-xl font-semibold text-gold">
+                    {member.image ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      member.name.charAt(0)
+                    )}
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-navy">{member.name}</h3>
+                    <h3 className="text-lg font-semibold text-navy">
+                      {member.name}
+                    </h3>
                     <p className="text-xs font-medium uppercase tracking-wider text-gold">
                       {member.role}
                     </p>

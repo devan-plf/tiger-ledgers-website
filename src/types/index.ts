@@ -33,6 +33,7 @@ export interface TeamMember {
   role: string;
   bio: string;
   linkedin: string;
+  image?: string;
 }
 
 export interface HeroSlide {
@@ -40,4 +41,5 @@ export interface HeroSlide {
   image: string;
   headline: string;
   subtext: string;
+  objectPosition?: string;
 }

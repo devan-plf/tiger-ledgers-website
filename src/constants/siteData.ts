@@ -43,24 +43,25 @@ export const CTA_HREF = "#contact";
 export const HERO_SLIDES: HeroSlide[] = [
   {
     id: "slide-1",
-    image:
-      "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=2000&q=80",
+    image: "/assets/hero-1.avif",
     headline: "Strategic Financial Leadership for Growing Businesses",
-    subtext: "Fractional CFO expertise and full-service accounting under one roof.",
+    subtext:
+      "Fractional CFO expertise and full-service accounting under one roof.",
+    objectPosition: "center 20%",
   },
   {
     id: "slide-2",
-    image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=2000&q=80",
+    image: "/assets/hero-2.avif",
     headline: "Numbers That Tell Your Story",
-    subtext: "Reporting and insights that turn raw data into confident decisions.",
+    subtext:
+      "Reporting and insights that turn raw data into confident decisions.",
   },
   {
     id: "slide-3",
-    image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=2000&q=80",
+    image: "/assets/hero-3.avif",
     headline: "A Trusted Partner in Your Growth",
     subtext: "Accounting, payroll, and tax — handled with precision and care.",
+    objectPosition: "center 20%",
   },
 ];
 
@@ -74,7 +75,8 @@ export const SERVICES: Service[] = [
   {
     id: "payroll-expenses",
     title: "Payroll & Expenses",
-    description: "Management of employee payments and business expense tracking.",
+    description:
+      "Management of employee payments and business expense tracking.",
     icon: Wallet,
   },
   {
@@ -92,7 +94,8 @@ export const SERVICES: Service[] = [
   {
     id: "fractional-cfo",
     title: "Fractional CFO",
-    description: "High-level strategic financial leadership on a part-time basis.",
+    description:
+      "High-level strategic financial leadership on a part-time basis.",
     icon: Briefcase,
   },
 ];
@@ -107,13 +110,15 @@ export const FOCUS_AREAS: FocusArea[] = [
   {
     id: "ecommerce",
     title: "eCommerce",
-    description: "Specific solutions for online retailers and digital marketplaces.",
+    description:
+      "Specific solutions for online retailers and digital marketplaces.",
     icon: ShoppingCart,
   },
   {
     id: "freelancers",
     title: "Freelancers & Contractors",
-    description: "Simplified accounting for solo professionals and 1099 workers.",
+    description:
+      "Simplified accounting for solo professionals and 1099 workers.",
     icon: User,
   },
   {
@@ -128,7 +133,8 @@ export const PARTNERSHIPS: Partnership[] = [
   {
     id: "cpa-outsourcing",
     title: "CPA Outsourcing",
-    description: "Partnering with Certified Public Accountants for back-office support.",
+    description:
+      "Partnering with Certified Public Accountants for back-office support.",
     icon: Users,
   },
   {
@@ -140,7 +146,8 @@ export const PARTNERSHIPS: Partnership[] = [
   {
     id: "ai-enablement",
     title: "AI Enablement",
-    description: "Integrating artificial intelligence into financial workflows.",
+    description:
+      "Integrating artificial intelligence into financial workflows.",
     icon: Sparkles,
   },
 ];
@@ -148,10 +155,11 @@ export const PARTNERSHIPS: Partnership[] = [
 export const TEAM: TeamMember[] = [
   {
     id: "girish",
-    name: "Girish Bendodker",
+    name: "Girish Bandodakar",
     role: "Co-Founder",
     bio: "Seasoned finance leader bringing decades of experience in accounting, controllership, and strategic CFO advisory to growing businesses.",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/girishbandodakar",
+    image: "/assets/girish.jpeg",
   },
   {
     id: "prashant",
@@ -163,10 +171,11 @@ export const TEAM: TeamMember[] = [
 ];
 
 export const CONTACT = {
-  address: "Address available upon request",
+  address:
+    "V4 complex 3rd Floor, Krishna Kamala Enclave, Uttarahalli, Bengaluru, Karnataka, 560061",
   email: "hello@tigerledgers.com",
-  phoneUS: "+1 (555) 000-0000",
-  phoneIN: "+91 00000 00000",
+  phoneUS: "+1 765 415 4779",
+  phoneIN: "+91 97383 69939",
 };
 
 export const SOCIALS = [
